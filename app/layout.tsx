@@ -1,4 +1,6 @@
 // LAYOUT.TSX
+import React from 'react';
+import { SparklesCore } from '@/components/ui/sparkles';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import MyNavbar from '@/components/navbar'; // Update the import path as necessary
@@ -21,12 +23,21 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${inter.className} relative min-h-screen`}>
         <div className="absolute inset-0 bg-gradient-to-b from-purple-950 to-slate-950"></div>
-        <div className="absolute inset-0 bg-black bg-opacity-45 backdrop-blur-md bg-repeat">
-          <img src="/particles.min.svg" alt="particles" className="blur-sm opacity-20"></img>
+        <div className="absolute inset-0 bg-black bg-repeat bg-opacity-45 backdrop-blur-md">
+          {/* <img src="/particles.min.svg" alt="particles" className="opacity-20 blur-sm"></img> */}
+          <SparklesCore
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={1.6}
+            maxSize={4.4}
+            particleDensity={5}
+            className="w-full h-full opacity-20"
+            particleColor="#ffffff"
+          />
         </div>
         <div className="relative">
           <MyNavbar />
-          <Separator className="mb-12 bg-slate-300 opacity-10" />
+          <Separator className="mb-12 opacity-10 bg-slate-300" />
           {children}
         </div>
       </body>

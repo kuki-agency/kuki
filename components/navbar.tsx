@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { BookIcon } from 'mage-icons-react/stroke';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const MyNavbar = () => {
   return (
-    <div className="mx-72 bg-transparent flex justify-between items-center p-4">
+    <div className="flex justify-between items-center p-4 mx-72 bg-transparent">
       <div className="">
         <Link href="/">
           <img
@@ -31,11 +33,21 @@ const MyNavbar = () => {
         </Link>
       </div>
       <div>
-        <Button
-          className="border-slate-300 border-opacity-10 bg-transparent text-white hover:bg-transparent-300 hover:animate-pulse hover:animate-duration-700 hover:animate-once hover:text-white"
-          variant="outline">
-          Fazer orçamento
-        </Button>
+        <TooltipProvider>
+          <Tooltip delayDuration={400}>
+            <TooltipTrigger asChild>
+              <Button
+                className="w-44 text-white bg-transparent border-opacity-10 border-slate-300 hover:bg-transparent-300 hover:animate-pulse hover:animate-duration-700 hover:animate-once hover:text-white"
+                variant="outline">
+                <BookIcon className="mr-2 w-5" />
+                Programa
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Para projetos Open Source e OSCs</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
     </div>
   );
