@@ -3,14 +3,14 @@ import React from 'react';
 import { SparklesCore } from '@/components/ui/sparkles';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import MyNavbar from '@/components/navbar'; // Update the import path as necessary
+import Header from '@/components/header'; // Update the import path as necessary
 import { Separator } from '@/components/ui/separator'; // Update the import path as necessary
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Kuki',
+  title: 'Kuki Web Agency',
   description: 'Websites rápidos, acessíveis e seguros com Kuki.',
 };
 
@@ -23,8 +23,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${inter.className} relative min-h-screen`}>
         <div className="absolute inset-0 bg-gradient-to-b from-purple-950 to-slate-950"></div>
-        <div className="absolute inset-0 bg-black bg-repeat bg-opacity-45 backdrop-blur-md">
-          {/* <img src="/particles.min.svg" alt="particles" className="opacity-20 blur-sm"></img> */}
+        <div className="absolute inset-0 bg-black bg-repeat backdrop-blur-md bg-opacity-45">
           <SparklesCore
             id="tsparticlesfullpage"
             background="transparent"
@@ -36,7 +35,7 @@ export default function RootLayout({
           />
         </div>
         <div className="relative">
-          <MyNavbar />
+          <Header />
           <Separator className="mb-12 opacity-10 bg-slate-300" />
           {children}
         </div>

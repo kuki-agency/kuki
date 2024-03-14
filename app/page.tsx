@@ -3,7 +3,7 @@ import MyHero from '@/components/hero';
 
 export default function Home() {
   return (
-    <div className="mx-72 mt-24 mb-12 min-h-full text-center bg-transparent rounded-md border-solid border-1">
+    <div className="mx-16 mt-24 mb-12 min-h-full text-center bg-transparent rounded-md border-solid xl:mx-72 border-1">
       <MyHero />
     </div>
   );
