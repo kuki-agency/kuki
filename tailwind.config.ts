@@ -15,6 +15,8 @@ const config = {
     extend: {
       colors: {
         border: 'hsl(var(--border))',
+        purpleGradient: 'hsl(var(--gradient-purple))',
+        slateGradient: 'hsl(var(--gradient-slate))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',

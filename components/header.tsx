@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { HeartHandshake } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import Nav from '@/components/nav';
 import Burger from '@/components/burger';
+import { MainButton } from '@/components/main-button';
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
           <img
             src="/logo-h.min.svg"
             alt="Logo"
-            className="h-10 lg:h-8 xl:h-10 hover:animate-pulse hover:animate-duration-1000 hover:animate-once"
+            className="h-8 lg:h-6 2xl:h-10 hover:animate-pulse hover:animate-duration-1000 hover:animate-once"
           />
         </Link>
       </div>
@@ -25,12 +25,10 @@ const Header = () => {
         <TooltipProvider>
           <Tooltip delayDuration={400}>
             <TooltipTrigger asChild>
-              <Button
-                className="w-40 text-sm tracking-tight bg-transparent border-opacity-10 border-slate-300 hover:bg-transparent-300 hover:animate-pulse hover:animate-duration-700 hover:animate-once hover:text-white"
-                variant="outline">
-                <HeartHandshake className="mr-2" />
+              <MainButton>
+                <HeartHandshake size={16} className="mr-2" />
                 Programa
-              </Button>
+              </MainButton>
             </TooltipTrigger>
             <TooltipContent>
               <p>Para projetos Open Source e OSCs</p>

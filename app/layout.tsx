@@ -22,8 +22,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${inter.className} relative min-h-screen`}>
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-950 to-slate-950"></div>
-        <div className="absolute inset-0 bg-black bg-repeat backdrop-blur-md bg-opacity-45">
+        <div className="absolute inset-0 bg-gradient-to-b from-purpleGradient to-slateGradient">
           <SparklesCore
             id="tsparticlesfullpage"
             background="transparent"
@@ -36,8 +35,8 @@ export default function RootLayout({
         </div>
         <div className="relative">
           <Header />
-          <Separator className="mb-12 opacity-10 bg-slate-300" />
-          {children}
+          <Separator className="opacity-10 bg-slate-300" />
+          <div className="mx-4 mt-12 min-h-full lg:mx-72">{children}</div>
         </div>
       </body>
     </html>
